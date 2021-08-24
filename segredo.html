@@ -3,14 +3,17 @@
 <button>Descubra o segredo escondido, que é um número de 0 a 10.</button>
 
 <script>
-    var segredo = 5;
+    var segredo = Math.round(Math.random() * 10);
     var input = document.querySelector("input");
-    function verifica() {
+    input.focus();
+    function verifica() {   
         if(input.value == segredo) {
             alert("Você advinhou!");
         } else {
             alert("Você errou!");
         }
+        input.value = "";
+        input.focus();
     }
     var button = document.querySelector("button");
     button.onclick = verifica;
